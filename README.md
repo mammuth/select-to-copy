@@ -9,7 +9,7 @@ Manifest v3.
 
 **Goal:** Easy to trust
 - Any such extension requires read access on all your tabs. That's dangerous
-- -> It's kept as minimal as possible so it's still reviewable.
+- -> It's kept as minimal as possible so it's still reviewable. ~50 lines of JavaScript
 
 ## Install (unpacked)
 
