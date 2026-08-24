@@ -1,7 +1,15 @@
 # Select to Copy
 
-Minimal Chrome/Edge extension (Manifest V3): any text you select is copied to the
-system clipboard immediately — no Ctrl+C.
+Chrome extension that copies any text you select to the
+system clipboard — no Ctrl+C.
+
+Just like you're used to with tmux et al.
+
+Manifest v3.
+
+**Goal:** Easy to trust
+- Any such extension requires read access on all your tabs. That's dangerous
+- -> It's kept as minimal as possible so it's still reviewable.
 
 ## Install (unpacked)
 
@@ -10,11 +18,3 @@ system clipboard immediately — no Ctrl+C.
 3. Reload any already-open tabs (content scripts only inject on load)
 
 Firefox: same files work via `about:debugging` → **Load Temporary Add-on** → `manifest.json`.
-
-## Notes
-
-- Uses `navigator.clipboard.writeText` on secure pages, falls back to a hidden
-  textarea + `execCommand('copy')` on plain `http://`.
-- Skips repeat writes of identical text.
-- Does not run on `chrome://` pages, the Chrome Web Store, or other tabs the
-  browser blocks extensions from.
